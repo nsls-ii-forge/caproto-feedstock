@@ -30,6 +30,8 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - pytest
+    - pytest-runner
   run:
     - python >=3.6
     - netifaces
@@ -39,8 +41,12 @@ requirements:
     - asks
 
 test:
+  requires:
+    - pytest
   imports:
-    - caproto
+    - {{ name }}
+  commands:
+    - pytest --pyargs {{ name }}.tests
 
 about:
   home: http://github.com/nsls-ii/caproto

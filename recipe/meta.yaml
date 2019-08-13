@@ -35,12 +35,8 @@ requirements:
     - trio
 
 test:
-  requires:
-    - pytest
   imports:
     - {{ name }}
-  commands:
-    - pytest --pyargs {{ name }}.tests
 
 about:
   home: http://github.com/nsls-ii/caproto

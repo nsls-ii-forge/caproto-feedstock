@@ -1,13 +1,14 @@
 {% set name = "caproto" %}
-{% set version = "0.4.0" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "342d5369fc388435f4373dc9bc92d1d351f6f384d18f130a8dbde1bee374c693" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/nsls-ii/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 61f28af8846ad10645837f6de4438ae6c82c36cecabbd64a353ec3b6a723a8e3
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   noarch: python
@@ -37,14 +38,14 @@ requirements:
 test:
   imports:
     - {{ name }}
+  commands:
+    - {{ name}}-get -h
+    - {{ name}}-get --help
+    - {{ name}}-put --help
 
 about:
-  home: http://github.com/nsls-ii/caproto
+  home: http://github.com/caproto/caproto
   license: BSD-3-Clause
   license_family: BSD
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   summary: 'a bring-your-own-IO implementation of the EPICS Channel Access protocol in pure Python'
-
-extra:
-  recipe-maintainers:
-    - CJ-Wright

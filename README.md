@@ -1,7 +1,7 @@
 About caproto
 =============
 
-Home: http://github.com/nsls-ii/caproto
+Home: http://github.com/caproto/caproto
 
 Package license: BSD-3-Clause
 
@@ -80,5 +80,4 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@CJ-Wright](https://github.com/CJ-Wright/)
 

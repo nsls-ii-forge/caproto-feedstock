@@ -1,13 +1,13 @@
 {% set name = "caproto" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "61f28af8846ad10645837f6de4438ae6c82c36cecabbd64a353ec3b6a723a8e3" %}
+{% set version = "0.4.3" %}
+{% set sha256 = "b49878201d6d655a5b8cd4f5f96cf6d18508875a5fe95b8704145678f2e7dd78" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/nsls-ii/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:

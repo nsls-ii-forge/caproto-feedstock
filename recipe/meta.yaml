@@ -1,6 +1,6 @@
 {% set name = "caproto" %}
-{% set version = "0.4.3" %}
-{% set sha256 = "b49878201d6d655a5b8cd4f5f96cf6d18508875a5fe95b8704145678f2e7dd78" %}
+{% set version = "0.4.4" %}
+{% set sha256 = "7af2cd88aca163d36012c42358302212664b50d7025f3eed4d4cf25aa5d26eb4" %}
 
 package:
   name: {{ name|lower }}

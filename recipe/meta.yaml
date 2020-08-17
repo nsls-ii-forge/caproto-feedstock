@@ -1,6 +1,6 @@
 {% set name = "caproto" %}
-{% set version = "0.5.2" %}
-{% set sha256 = "cd1032a774d2855c236d881404fc92a0196bbc9f2f9f388aa14be1ba4f8453e5" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "957c86e1e98ef6bbd365ba6b1053f56402aa51ca6981bb90b1bafa0351cde65d" %}
 
 package:
   name: {{ name|lower }}
@@ -20,7 +20,7 @@ build:
     - caproto-defaultdict-server = caproto.ioc_examples.defaultdict_server:main
     - caproto-spoof-beamline = caproto.ioc_examples.spoof_beamline:main
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -39,13 +39,13 @@ test:
   imports:
     - {{ name }}
   commands:
-    - {{ name}}-get -h
-    - {{ name}}-get --help
-    - {{ name}}-put --help
+    - {{ name }}-get -h
+    - {{ name }}-get --help
+    - {{ name }}-put --help
 
 about:
   home: http://github.com/caproto/caproto
   license: BSD-3-Clause
   license_family: BSD
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: 'a bring-your-own-IO implementation of the EPICS Channel Access protocol in pure Python'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
+  summary: a bring-your-own-IO implementation of the EPICS Channel Access protocol in pure Python

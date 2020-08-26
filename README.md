@@ -5,7 +5,7 @@ Home: http://github.com/caproto/caproto
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: a bring-your-own-IO implementation of the EPICS Channel Access protocol in pure Python
 

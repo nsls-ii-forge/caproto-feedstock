@@ -48,6 +48,7 @@ test:
     - caproto-shark --help
     - which caproto-defaultdict-server
     - which caproto-spoof-beamline
+    - echo -e "\n" | caproto-spoof-beamline & (pid=$! ; sleep 5 ; kill -SIGINT $pid)
 
 about:
   home: http://github.com/caproto/caproto

@@ -11,16 +11,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  number: 1
   noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - caproto-get = caproto.commandline.get:main
     - caproto-put = caproto.commandline.put:main
     - caproto-monitor = caproto.commandline.monitor:main
     - caproto-repeater = caproto.commandline.repeater:main
-    - caproto-defaultdict-server = caproto.ioc_examples.defaultdict_server:main
-    - caproto-spoof-beamline = caproto.ioc_examples.spoof_beamline:main
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+    - caproto-shark = caproto.commandline.shark:main
+    - caproto-defaultdict-server = caproto.ioc_examples.pathological.defaultdict_server:main
+    - caproto-spoof-beamline = caproto.ioc_examples.pathological.spoof_beamline:main
 
 requirements:
   host:
@@ -42,6 +43,12 @@ test:
     - caproto-get -h
     - caproto-get --help
     - caproto-put --help
+    - caproto-monitor --help
+    - caproto-repeater --help
+    - caproto-shark --help
+    - which caproto-defaultdict-server
+    - which caproto-spoof-beamline
+    - echo -e "\n" | caproto-spoof-beamline & (pid=$! ; sleep 5 ; kill -SIGINT $pid)
 
 about:
   home: http://github.com/caproto/caproto

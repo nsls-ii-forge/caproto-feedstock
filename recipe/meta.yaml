@@ -1,6 +1,6 @@
 {% set name = "caproto" %}
-{% set version = "0.7.0" %}
-{% set sha256 = "19895ba202d4dc3cc2a26d93bb14d13aac6fac0f952a5cb15d77e9bdab1ee438" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "1be5815b7d4bb4b2c620e7d0e9f0c5072fb470e0d45c9d21ec8d9693ba33f6c8" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
